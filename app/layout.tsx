@@ -1,26 +1,21 @@
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Experience from "@/components/Experience";
-import Skills from "@/components/Skills";
-import Contact from "@/components/Contact";
+import type { Metadata } from "next";
+import Navbar from "../components/Navbar";
 
-export const metadata = {
-  title: "Mukul Kumar | Infra Support Engineer",
-  description: "Portfolio of Mukul Kumar - Infra Support & Trade Monitoring Engineer",
+export const metadata: Metadata = {
+  title: "Mukul Kumar | Infra & Trade Monitor Engineer",
+  description: "Portfolio Website",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;   // <-- IMPORTANT FIX
+}) {
   return (
     <html lang="en">
-      <body className="bg-[#050509] text-white">
+      <body className="bg-[#050509] text-white antialiased">
         <Navbar />
-        <Hero />
-        <About />
-        <Experience />
-        <Skills />
-        <Contact />
         {children}
       </body>
     </html>
